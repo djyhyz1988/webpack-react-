@@ -1,15 +1,21 @@
 import React from 'react';
 import PureMixinRender from 'react-addons-pure-render-mixin';
 
+import HotItem from './hot/hotItem';
+import RecommendItem from './recommend/recommendItem';
 import './style.less';
 
 class HomeHeader extends React.Component{
-    constructor(props, context){
-        super(props, context);
-        this.shouldComponentUpdate = PureMixinRender.shouldComponentUpdate;
+    constructor(props){
+        super(props);
+        this.shouldComponentUpdate = (nextProps, nextState)=>{
+           return PureMixinRender.shouldComponentUpdate(this, nextProps, nextState);
+        }
     }
-
     render(){
+        const data = this.props.data
+        const classItems = data.ClassifyItems ? data.ClassifyItems : ''
+
         return(
             <div className="index-wraper">
                 <div className="header-wrap">
@@ -23,18 +29,29 @@ class HomeHeader extends React.Component{
                             <div className="head_portrait">
                                 <div>
                                     <div className="header-cricle">
+                                        <img src={ data.BusinessInfo? data.BusinessInfo.logo : '' } />
                                     </div>
-                                    <div className="nickname">阿杜</div>
+                                    <div className="nickname"> { data.BusinessInfo? data.BusinessInfo.Name : '汤姆猫' }</div>
                                 </div>
                             </div>
                             <div className="tags flex-wrap">
-                                <div className="tag">
-                                    标签
-                                </div>
+                                {
+                                    classItems
+                                        ?
+                                        classItems.map((item,index) => {
+                                           return <div key={index} className="tag">{ item.Name }</div>
+                                        })
+                                        : ''
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
+                <div className="hr-line"></div>
+                <RecommendItem data={ data }/>
+                {/* 热门推荐 */}
+                <div className="hr-line"></div>
+                <HotItem data={ data }/>
             </div>
         )
     }

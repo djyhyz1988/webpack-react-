@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 import config from '../../config/config';
-import httpApi from '../../fetch/post';
+import httpUtil from '../../fetch/post';
 
 export function getUserInfo(data) {
     return {
@@ -8,20 +8,20 @@ export function getUserInfo(data) {
         data
     }
 }
-export function getDataSuccess() {
-    console.log('获取数据啦');
-}
-/**  获取头部数据 **/
-export const getUser = (data)=>{
-    return dispatch=>{
-        dispatch(getUserInfo(data))
+
+/**  获取头部数据 dispatch(getUserInfo(json))**/
+export const getUser = ()=>{
+    return dispatch => {
         let options ={
-            url: ''
+            header:{}
         }
-        httpApi.post(options)
-            .then((json)=> dispatch(getDataSuccess()))
-            .then((err)=>{
-                console.log('错误信息:' + err)
+
+        httpUtil.post(config.apis.userinfoApi.index,options)
+            .then((json) => {
+                dispatch(getUserInfo(json.data))
+            },(err) => {
+                console.info('err',err);
             })
+
     }
 }

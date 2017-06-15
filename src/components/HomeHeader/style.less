@@ -1,3 +1,7 @@
+.index-wraper{
+  overflow: hidden;
+}
+
 .header-wrap{
   width: 100%;
   height: 274px;
@@ -39,6 +43,7 @@
       border: 3px solid #ffffff;
       border-radius: 100%;
       margin: 0 auto;
+      overflow: hidden;
     }
     .nickname{
       font-size: 14px;
@@ -64,6 +69,103 @@
       color: #ffffff;
       padding: 0 13px;
       display: inline-block;
+    }
+  }
+}
+.recommend-box{
+  margin-top: 0;
+  width: 100%;
+  background: #ffffff;
+
+  .boutique-recommend{
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+    margin-left: 10px;
+    .item{
+      width: 115px;
+      display: inline-block;
+      margin-right: 10px;
+      white-space: normal;
+      .title{
+        font-size: 14px;
+        color: #333333;
+        padding-top: 5px;
+      }
+      .price{
+        font-size: 13px;
+        color: #E02020;
+        padding-top: 3px;
+        padding-bottom: 10px;
+      }
+    }
+    img{
+      width: 117px;
+      height: 117px;
+      border-radius: 3px;
+    }
+  }
+}
+.recomment-title{
+  width: 100%;
+  height: 40px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  .line{
+    display: inline-block;
+    width: 15px;
+    height: 3px;
+    background: #FF2F2F;
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+  .title{
+    padding: 0 15px;
+    font-size: 15px;
+    color: #333333;
+  }
+}
+.hot-box{
+  margin-top: 0;
+  width: 100%;
+  background: #ffffff;
+  .hot-list{
+    padding: 0 15px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap:wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  .hot-item{
+    width: 160px;
+    margin-bottom: 20px;
+    img{
+      width: 117px;
+      height: 117px;
+      border-radius: 5px;
+    }
+    .content{
+      padding-top: 5px;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+    .priceinfo{
+      padding-top: 6px;
+      line-height: 13px;
+    }
+    .title{
+      font-size: 14px;
+      color: #333333;
+    }
+    .disprice{
+      color: #E02020;
+      padding-right: 5px;
     }
   }
 }

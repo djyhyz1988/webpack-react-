@@ -9,10 +9,11 @@ import {
 } from 'react-router-dom';
 /** React组件性能优化 **/
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {connect} from 'react-redux';
 
 /** 首页 **/
 import Home from '../containers/Home';
+import Goods from '../containers/Goods';
+import NotFound from '../containers/NoFound/404Page';
 
 class App extends React.Component{
     constructor(props,context) {
@@ -28,29 +29,18 @@ class App extends React.Component{
         let Routes =(
             <Switch>
                 <Route exact path="/" component={ Home } />
+                <Route path="/goods" component={ Goods }/>
+                <Route component={NotFound}/>
             </Switch>
         );
         return (
             <Router>
                 <div>
-                    { /**  **/}
                     { this.state.initialDone? Routes:(<div>加载中...</div>) }
                 </div>
             </Router>
         )
     }
 };
-
-// const mapStateToProps = state => ({});
-//
-// const mapDispatchToProps = dispatch => ({
-//
-// });
-//
-// export default connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-// )(App);
-
 export default App;
 
