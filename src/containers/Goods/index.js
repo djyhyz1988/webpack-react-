@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 
 /** 组件 **/
-import HomeFooter from '../Footer/index';
+import HomeFooter from '../../components/HomeFooter';
 
 class Goods extends React.Component{
     constructor(props){

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 /** 组件引入 **/
 import HomeHeader from '../../components/HomeHeader';
-import HomeFooter from '../Footer/index';
+import HomeFooter from '../../components/HomeFooter';
 
 import { getUser } from '../../redux/actions/userinfo.action';
 
