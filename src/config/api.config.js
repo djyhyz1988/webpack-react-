@@ -8,6 +8,9 @@ class Apis{
         this.apis = {
             userinfoApi:{
                 index: '/api3/v/GetSampleIndex'
+            },
+            goodsApi :{
+                index: '/api3/v/GetGoodsList'
             }
         }
     }

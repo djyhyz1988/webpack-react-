@@ -11,8 +11,8 @@ import {
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 /** 首页 **/
-import Home from '../containers/Home';
-import Goods from '../containers/Goods';
+import Home from '../containers/Home/index';
+import Goods from '../containers/Goods/index';
 import NotFound from '../containers/NoFound/404Page';
 
 class App extends React.Component{

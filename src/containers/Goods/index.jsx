@@ -3,7 +3,9 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 
 /** 组件 **/
-import HomeFooter from '../../components/HomeFooter';
+import HomeFooter from '../../components/HomeFooter/index';
+import SearchInput from '../../components/SearchInput';
+import GoodsList from  '../../components/GoosList/index';
 
 class Goods extends React.Component{
     constructor(props){
@@ -13,7 +15,11 @@ class Goods extends React.Component{
 
     render(){
         return(
-            <HomeFooter navIndex="2" />
+           <div>
+               <SearchInput />
+               <GoodsList />
+               <HomeFooter navIndex="2" />
+           </div>
         )
     }
 }
@@ -27,7 +33,7 @@ let mapStateToProps = (state)=>{
  }
 }
 /**
- *actions中的方法
+ * actions中的方法
  * **/
 let mapDispatchToProps = (dispatch)=>{
     return {

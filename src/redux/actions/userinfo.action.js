@@ -10,7 +10,7 @@ export function getUserInfo(data) {
 }
 
 /**  获取头部数据 dispatch(getUserInfo(json))**/
-export const getUser = ()=>{
+export const getUser = () =>{
     return dispatch => {
         let options ={
             header:{}

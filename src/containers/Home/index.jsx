@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 /** 组件引入 **/
-import HomeHeader from '../../components/HomeHeader';
-import HomeFooter from '../../components/HomeFooter';
+import HomeHeader from '../../components/HomeHeader/index';
+import HomeFooter from '../../components/HomeFooter/index';
 
 import { getUser } from '../../redux/actions/userinfo.action';
 
@@ -29,15 +29,15 @@ class Home extends React.Component{
 /**
  * action中的数据
  * **/
-let mapStateToProps = (state)=>{
+let mapStateToProps = (state) => {
     return {
         userinfo: state.userinfo
     }
 }
 /**
- *actions中的方法
+ * actions中的方法
  * **/
-let mapDispatchToProps = (dispatch)=>{
+let mapDispatchToProps = (dispatch) =>{
     return {
         getUser:()=>{
             dispatch(getUser())

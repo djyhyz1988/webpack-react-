@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react'
 import PureMixinRender from 'react-addons-pure-render-mixin';
 
 import HotItem from './hot/hotItem';
@@ -55,5 +55,9 @@ class HomeHeader extends React.Component{
             </div>
         )
     }
+}
+
+HomeHeader.propTypes = {
+    data : PropTypes.object.isRequired
 }
 export default HomeHeader;
